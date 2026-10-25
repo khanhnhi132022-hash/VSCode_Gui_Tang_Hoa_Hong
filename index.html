@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌹 For Every Beautiful Woman</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: radial-gradient(ellipse at center, #260512, #080308 65%, #000);
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 15% 20%, #fff 50%, transparent),
+        radial-gradient(1px 1px at 80% 15%, #ffb7c5 50%, transparent),
+        radial-gradient(2px 2px at 65% 75%, #fff 50%, transparent),
+        radial-gradient(1px 1px at 30% 80%, #ff496d 50%, transparent),
+        radial-gradient(2px 2px at 90% 60%, #fff 50%, transparent);
+    background-size: 240px 240px;
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .25; }
+    to { opacity: 1; }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 18px;
+}
+
+.subtitle {
+    color: #f6c8d2;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #ffe5ec;
+    font-size: clamp(27px, 5vw, 48px);
+    font-weight: normal;
+    text-shadow: 0 0 25px #ff174d;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #d7a7b5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.bouquet {
+    position: relative;
+    width: 330px;
+    height: 350px;
+    max-width: 95vw;
+    margin: 20px auto 0;
+}
+
+.stem {
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    width: 4px;
+    height: 180px;
+    background: linear-gradient(to right, #17351d, #6baf60, #142b18);
+    transform: translateX(-50%) rotate(-5deg);
+    border-radius: 10px;
+}
+
+.leaf {
+    position: absolute;
+    width: 65px;
+    height: 29px;
+    background: linear-gradient(135deg, #376c37, #102b19);
+    border-radius: 100% 0 100% 0;
+    border: 1px solid #638e4e;
+}
+
+.leaf.left {
+    top: 225px;
+    left: 105px;
+    transform: rotate(20deg);
+}
+
+.leaf.right {
+    top: 260px;
+    right: 95px;
+    transform: rotate(190deg);
+}
+
+/* Bông hoa có thể nhấn */
+.flower {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(0 0 13px #e91e4d66);
+    transition: filter .4s;
+    animation: bloom 1.5s ease-out both, float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.flower:hover {
+    filter: drop-shadow(0 0 25px #ff174d);
+}
+
+.flower:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+
+.flower.one {
+    left: 100px;
+    top: 0;
+    animation-delay: 0s, 1.5s;
+}
+
+.flower.two {
+    left: 15px;
+    top: 55px;
+    transform: scale(.82) rotate(-15deg);
+    animation-delay: .3s, 1.8s;
+}
+
+.flower.three {
+    right: 15px;
+    top: 55px;
+    transform: scale(.82) rotate(15deg);
+    animation-delay: .6s, 2.1s;
+}
+
+@keyframes bloom {
+    from { opacity: 0; scale: .1; }
+    to { opacity: 1; scale: 1; }
+}
+
+@keyframes float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}
+
+/* Cánh hoa */
+.petal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 68px;
+    transform-origin: 50% 88%;
+    border-radius: 50% 50% 42% 42%;
+    background: radial-gradient(ellipse at 35% 25%,
+        #ffb2c1 0%, #ff456e 22%, #c70036 60%, #5d001b 100%);
+    border: 1px solid #ff718f88;
+    box-shadow: inset 0 0 8px #ffb3c966;
+    margin-left: -22px;
+    margin-top: -53px;
+    transition: transform .7s ease;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-9px); }
+.petal:nth-child(2) { transform: rotate(45deg) translateY(-9px); }
+.petal:nth-child(3) { transform: rotate(90deg) translateY(-9px); }
+.petal:nth-child(4) { transform: rotate(135deg) translateY(-9px); }
+.petal:nth-child(5) { transform: rotate(180deg) translateY(-9px); }
+.petal:nth-child(6) { transform: rotate(225deg) translateY(-9px); }
+.petal:nth-child(7) { transform: rotate(270deg) translateY(-9px); }
+.petal:nth-child(8) { transform: rotate(315deg) translateY(-9px); }
+
+/* Hình bóng cô gái cách điệu */
+.girl {
+    position: absolute;
+    inset: 8px 7px 9px;
+    overflow: hidden;
+    border-radius: 50% 50% 40% 40%;
+    background: linear-gradient(145deg, #ffd8df, #a71841 70%);
+    opacity: .75;
+}
+
+.girl::before {
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 23px;
+    border-radius: 48% 48% 45% 45%;
+    background: #230913;
+    top: 10px;
+    left: 6px;
+    box-shadow: -4px -3px 0 2px #16070d;
+}
+
+.girl::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 35px;
+    border-radius: 50% 50% 10% 10%;
+    background: #230913;
+    top: 32px;
+    left: -1px;
+}
+
+.center {
+    position: absolute;
+    z-index: 5;
+    width: 31px;
+    height: 31px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ffdca0, #d99534 45%, #70330b);
+    box-shadow: 0 0 15px #ffbf54;
+    border: 2px solid #ffdd93;
+}
+
+.hint {
+    color: #f4c1d0;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-top: -2px;
+    animation: twinkle 2s infinite alternate;
+}
+
+/* Hộp lời chúc */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    overflow-y: auto;
+    background: #000000dd;
+    backdrop-filter: blur(8px);
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeIn .5s ease;
+}
+
+.message {
+    width: 100%;
+    max-width: 480px;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 30px 24px;
+    border: 1px solid #d94a6d;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #290813, #090308);
+    box-shadow: 0 0 55px #d4144b44;
+    animation: rise .6s ease;
+}
+
+.rose {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.message h2 {
+    color: #ffb6ca;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.message p {
+    color: #f8e3e9;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* Ảnh nằm bên dưới lời chúc */
+.wish-image {
+    display: none;
+    width: 190px;
+    max-width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #e76a8b;
+    box-shadow: 0 0 25px #ff174d55;
+    margin: 22px auto 0;
+    animation: rise .7s ease;
+}
+
+.signature {
+    margin-top: 20px;
+    color: #f3b7c7;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.close {
+    margin-top: 24px;
+    padding: 11px 24px;
+    color: white;
+    background: #a90e3a;
+    border: 1px solid #ff829e;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close:hover {
+    background: #ec285b;
+    box-shadow: 0 0 20px #f32b60;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rise {
+    from { transform: translateY(25px) scale(.9); }
+    to { transform: translateY(0) scale(1); }
+}
+
+footer {
+    color: #926c7b;
+    font-size: 12px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 400px) {
+    .bouquet {
+        transform: scale(.88);
+        transform-origin: top center;
+        margin-bottom: -35px;
+    }
+
+    .message h2 {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="container">
+    <p class="subtitle">A little gift from the heart</p>
+
+    <h1>For beautiful and lucky girls</h1>
+
+    <p class="description">
+        Mỗi người phụ nữ là một bông hoa.<br>
+        Mỗi vẻ đẹp đều xứng đáng được trân trọng.
+    </p>
+
+    <section class="bouquet" aria-label="Bó hoa hồng">
+
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+
+        <!-- BÔNG HOA 1 -->
+        <button class="flower one"
+                aria-label="Mở lời chúc thứ nhất"
+                onclick="openWish(0)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+
+        <!-- BÔNG HOA 2 -->
+        <button class="flower two"
+                aria-label="Mở lời chúc thứ hai"
+                onclick="openWish(1)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+
+        <!-- BÔNG HOA 3 -->
+        <button class="flower three"
+                aria-label="Mở lời chúc thứ ba"
+                onclick="openWish(2)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+
+    </section>
+
+    <p class="hint">
+        ✦ CHẠM VÀO MỘT BÔNG HOA ĐỂ NHẬN LỜI CHÚC ✦
+    </p>
+
+    <footer>
+        MADE WITH LOVE · TO ALL WOMEN 🌹
+    </footer>
+</main>
+
+<!-- CỬA SỔ LỜI CHÚC VÀ ẢNH -->
+<div class="modal" id="wishModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="wishTitle"
+     onclick="closeOutside(event)">
+
+    <div class="message">
+
+        <div class="rose">🌹</div>
+
+        <h2 id="wishTitle">Gửi những đóa hồng xinh đẹp</h2>
+
+        <p id="wishText"></p>
+
+        <!-- ẢNH XUẤT HIỆN NGAY DƯỚI LỜI CHÚC -->
+        <img id="wishImage"
+             class="wish-image"
+             src=""
+             alt="Hình ảnh cô gái">
+
+        <div class="signature">
+            You are very beautiful. ♡
+        </div>
+
+        <button class="close" onclick="closeWish()">
+            Khép lại bằng một nụ cười ✨
+        </button>
+
+    </div>
+</div>
+
+<script>
+/*
+  ĐẶT ẢNH VÀO THƯ MỤC images.
+  Ví dụ: images/co-gai-1.jpg
+*/
+
+const wishes = [
+    {
+        title: "Gửi chị Ánh Ngọc",
+        text: "Chúc chị luôn xinh đẹp theo cách riêng của mình, hạnh phúc trong từng khoảnh khắc, tự tin theo đuổi ước mơ và luôn được yêu thương, trân trọng. Mong cuộc đời dịu dàng với chị như cách bạn làm thế giới trở nên ấm áp hơn. 💗",
+        image: "https://scontent.fhan12-1.fna.fbcdn.net/v/t39.30808-6/634046118_1465500725137797_1865539545462609840_n.jpg?stp=dst-jpg_tt6&cstp=mx1827x1848&ctp=s1827x1848&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeG2Nm0kafxc8elvXl08o0zX7JLyIdQPi1DskvIh1A-LUKMUgPgiWmFKDXS8zXt3J3e0Lb0JcyEliIhvZ-D69TnY&_nc_ohc=xPt71DL4bygQ7kNvwH2-QPM&_nc_oc=AdpHiRMach6mI6DCfeD9Q68ws-ZJUi0NcAYo3paS7X0M0ksdN4ZrTrTmPAl_mLDyAGs&_nc_zt=23&_nc_ht=scontent.fhan12-1.fna&_nc_gid=UWBYbcmh_JDBRCKMug03GA&_nc_ss=7b2a8&oh=00_AQN6j4cpoMJJ75g_Dy2posxq-NdAXPFgCV_iMwosizUrKg&oe=6AE3FBD6"
+    },
+    {
+        title: "Gửi chị Khánh Linh",
+        text: "Chúc chị luôn có đủ mạnh mẽ để bước qua thử thách, đủ dịu dàng để yêu thương bản thân và đủ can đảm để sống cuộc đời mình mong muốn. Giá trị của chị nằm ở chính con người tuyệt vời mà chị đang trở thành. ✨",
+        image: "https://scontent.fhan12-1.fna.fbcdn.net/v/t39.30808-1/631811726_920695793691426_7341009634511745646_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s200x200&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFz-SysFe2EqsNriM_fQRd3O-M-3lkAilw74z7eWQCKXAiyUw8DOylQ5mT8AU2Dltj57tDYWQfSMiacYP-QP0u1&_nc_ohc=5CitTGv1HqkQ7kNvwG6rfcr&_nc_oc=AdrrZR_sXHM5IZJKF77K-4qQ_tnKcdyc1U_KwJQ9KtPRUjvGIepS46pgrkh7LdyPCvI&_nc_zt=24&_nc_ht=scontent.fhan12-1.fna&_nc_gid=jU0BTVwy7rVtkMV1poG9Kg&_nc_ss=7b2a8&oh=00_AQM8hTVAl2_mRGnK2UxcPt9b2Ty6Xwpsu5RM8CcL_fqOug&oe=6AE40420"
+    },
+    {
+        title: "Gửi chị Ngân Trâm",
+        text: "Chúc chị luôn bình an, luôn vững vàng, luôn rực rỡ và luôn được lựa chọn, được lắng nghe và được sống là chính mình. Mong mỗi ngày đều mang đến cho chị một lý do để mỉm cười. 🌷",
+        image: "https://scontent.fhan12-1.fna.fbcdn.net/v/t39.30808-6/830883161_1415594240703344_4346896528021115637_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x1280&ctp=s1280x1280&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEgDePXORika-4yqrzXUFkzFPF-ruNi7VAU8X6u42LtUIJXJofcbWnthV2CJ4F5BxGRsdlk_fnywQpI_Erp-xTK&_nc_ohc=hPnzdXGSuEkQ7kNvwGquf2R&_nc_oc=AdraHaE6d3Tji2xDPQwnqRRZ87m5H38ioZQactNyDeK7ktmU0YAznpzroLYuiV9Uei8&_nc_zt=23&_nc_ht=scontent.fhan12-1.fna&_nc_gid=AjXenVBQUGOB1YOJwiG5rA&_nc_ss=7b2a8&oh=00_AQNAXM3tvqhzk0j1CLO36VlvIbrLKTTis2QcV33W5JuKIg&oe=6AE409C9"
+    }
+];
+
+function openWish(index) {
+    const wish = wishes[index];
+
+    document.getElementById("wishTitle").textContent =
+        wish.title;
+
+    document.getElementById("wishText").textContent =
+        wish.text;
+
+    const image = document.getElementById("wishImage");
+
+    image.style.display = "none";
+    image.alt = "Hình ảnh minh họa cho lời chúc";
+
+    image.onload = function() {
+        image.style.display = "block";
+    };
+
+    image.onerror = function() {
+        image.style.display = "none";
+    };
+
+    image.src = wish.image;
+
+    document.getElementById("wishModal").classList.add("show");
+    document.body.style.overflow = "hidden";
+
+    document.querySelector(".close").focus();
+}
+
+function closeWish() {
+    document.getElementById("wishModal").classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+function closeOutside(event) {
+    if (event.target.id === "wishModal") {
+        closeWish();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeWish();
+    }
+});
+</script>
+
+</body>
+</html>
